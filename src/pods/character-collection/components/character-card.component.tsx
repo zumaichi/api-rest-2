@@ -9,42 +9,42 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { CharacterEntityVm } from '../Character-collection.vm';
-import * as classes from './Character-card.styles';
+import { CharacterEntityVm } from '../character-collection.vm';
+import * as classes from './character-card.styles';
 
 interface Props {
-  Character: CharacterEntityVm;
+  character: CharacterEntityVm;
   onEdit: (id: string) => void;
   onDelete: (id: string) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { Character, onEdit, onDelete } = props;
+  const { character, onEdit, onDelete } = props;
 
   return (
     <Card>
       <CardHeader
-        avatar={<Avatar aria-label="Character">{Character.rating}</Avatar>}
-        title={Character.name}
-        subheader={Character.address}
+        avatar={<Avatar aria-label="Character">{character.rating}</Avatar>}
+        title={character.name}
+        subheader={character.address}
       />
       <CardContent>
         <div className={classes.content}>
           <CardMedia
-            image={Character.picture}
-            title={Character.name}
+            image={character.picture}
+            title={character.name}
             style={{ height: 0, paddingTop: '56.25%' }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            {Character.description}
+            {character.description}
           </Typography>
         </div>
       </CardContent>
       <CardActions>
-        <IconButton onClick={() => onEdit(Character.id)}>
+        <IconButton onClick={() => onEdit(character.id)}>
           <EditIcon />
         </IconButton>
-        <IconButton onClick={() => onDelete(Character.id)}>
+        <IconButton onClick={() => onDelete(character.id)}>
           <DeleteIcon />
         </IconButton>
       </CardActions>

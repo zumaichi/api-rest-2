@@ -1,1 +1,1 @@
-export * from './Character.container';
+export * from './character.container';

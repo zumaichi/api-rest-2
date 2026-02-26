@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import { CharacterEntityVm } from './Character-collection.vm';
-import { CharacterCard } from './components/Character-card.component';
-import * as classes from './Character-collection.styles';
+import { CharacterEntityVm } from './character-collection.vm';
+import { CharacterCard } from './components/character-card.component';
+import * as classes from './character-collection.styles';
 
 interface Props {
-  CharacterCollection: CharacterEntityVm[];
+  characterCollection: CharacterEntityVm[];
   onCreateCharacter: () => void;
   onEdit: (id: string) => void;
   onDelete: (id: string) => void;
@@ -14,19 +14,19 @@ interface Props {
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
   props
 ) => {
-  const { CharacterCollection, onCreateCharacter, onEdit, onDelete } = props;
+  const { characterCollection, onCreateCharacter, onEdit, onDelete } = props;
 
   return (
     <div className={classes.root}>
       <Button variant="contained" color="primary" onClick={onCreateCharacter}>
-        Add Character
+        Add character
       </Button>
 
       <ul className={classes.list}>
-        {CharacterCollection.map((Character) => (
-          <li key={Character.id}>
+        {characterCollection.map((character) => (
+          <li key={character.id}>
             <CharacterCard
-              Character={Character}
+              character={character}
               onEdit={onEdit}
               onDelete={onDelete}
             />

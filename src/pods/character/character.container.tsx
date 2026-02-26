@@ -1,16 +1,13 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import * as api from './api';
-import { createEmptyCharacter, Character } from './Character.vm';
-import {
-  mapCharacterFromApiToVm,
-  mapCharacterFromVmToApi,
-} from './Character.mappers';
+import { createEmptyCharacter, Character } from './character.vm';
+import {mapCharacterFromApiToVm,mapCharacterFromVmToApi} from './character.mappers';
 import { Lookup } from '#common/models';
-import { CharacterComponent } from './Character.component';
+import { CharacterComponent } from './character.component';
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
-  const [Character, setCharacter] = React.useState<Character>(
+  const [character, setCharacter] = React.useState<Character>(
     createEmptyCharacter()
   );
   const [cities, setCities] = React.useState<Lookup[]>([]);
@@ -23,8 +20,10 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   };
 
   const handleLoadCharacter = async () => {
-    const apiCharacter = await api.getCharacter(id);
-    setCharacter(mapCharacterFromApiToVm(apiCharacter));
+    if (id) {
+      const apiCharacter = await api.getCharacterById(id);
+      setCharacter(mapCharacterFromApiToVm(apiCharacter));
+    }
   };
 
   React.useEffect(() => {
@@ -34,19 +33,19 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     handleLoadCityCollection();
   }, []);
 
-  const handleSave = async (Character: Character) => {
-    const apiCharacter = mapCharacterFromVmToApi(Character);
+  const handleSave = async (character: Character) => {
+    const apiCharacter = mapCharacterFromVmToApi(character);
     const success = await api.saveCharacter(apiCharacter);
     if (success) {
       navigate(-1);
     } else {
-      alert('Error on save Character');
+      alert('Error on save character');
     }
   };
 
   return (
     <CharacterComponent
-      Character={Character}
+      character={character}
       cities={cities}
       onSave={handleSave}
     />

@@ -1,2 +1,2 @@
-export * from './Character.api';
-export * from './Character.api-model';
+export * from './character.api';
+export * from './character.api-model';

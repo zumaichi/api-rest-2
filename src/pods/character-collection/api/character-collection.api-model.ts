@@ -17,4 +17,12 @@ export interface Character {
   episode: string[];
   url: string;
   created: string;
+  bestSentence?: string;
+}
+
+export interface CharacterListResponse {
+  info: {
+    count: number;
+  };
+  results: Character[];
 }

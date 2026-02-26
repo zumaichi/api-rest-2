@@ -1,17 +1,18 @@
 import { generatePath } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 interface SwitchRoutes {
   root: string;
-  CharacterCollection: string;
+  characterCollection: string;
   createCharacter: string;
   editCharacter: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
   root: '/',
-  CharacterCollection: '/Characters',
-  createCharacter: '/Characters/create',
-  editCharacter: '/Characters/:id',
+  characterCollection: '/characters',
+  createCharacter: '/characters/create',
+  editCharacter: '/characters/:id',
 };
 
 type NavigationFunction = (id: string) => string;

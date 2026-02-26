@@ -1,1 +1,1 @@
-export * from './Character-collection.container';
+export * from './character-collection.container';

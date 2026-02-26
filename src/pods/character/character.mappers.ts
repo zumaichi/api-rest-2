@@ -1,27 +1,40 @@
-import * as apiModel from './api/Character.api-model';
-import * as viewModel from './Character.vm';
+import * as apiModel from './api/character.api-model';
+import * as viewModel from './character.vm';
 
 export const mapCharacterFromApiToVm = (
-  Character: apiModel.Character
+  character: apiModel.Character
 ): viewModel.Character => ({
-  ...Character,
-  id: Character.id,
-  name: Character.name,
-  description: Character.shortDescription,
-  rating: Character.CharacterRating,
-  address: Character.address1,
-  city: Character.city,
+  id: character.id.toString(),
+  name: character.name,
+  status: character.status,
+  species: character.species,
+  gender: character.gender,
+  origin: character.origin.name,
+  location: character.location.name,
+  image: character.image,
+  type: character.type || 'N/A',
 });
 
 export const mapCharacterFromVmToApi = (
-  Character: viewModel.Character
+  character: viewModel.Character
 ): apiModel.Character =>
   ({
-    ...Character,
-    id: Character.id,
-    name: Character.name,
-    shortDescription: Character.description,
-    CharacterRating: Character.rating,
-    address1: Character.address,
-    city: Character.city,
+    id: Number(character.id),
+    name: character.name,
+    status: character.status,
+    species: character.species,
+    gender: character.gender,
+    origin: {
+      name: character.origin,
+      url: '',
+    },
+    location: {
+      name: character.location,
+      url: '',
+    },
+    image: character.image,
+    type: character.type,
+    episode: [],
+    url: '',
+    created: new Date().toISOString(),
   }) as unknown as apiModel.Character;

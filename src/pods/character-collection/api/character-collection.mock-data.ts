@@ -1,6 +1,7 @@
-import { Character } from './character.api-model';
+import { Character } from "./character-collection.api-model";
 
-export const characters: Character[] = [
+
+export const mockCharacters: Character[] = [
   {
     id: 1,
     name: 'Rick Sanchez',
