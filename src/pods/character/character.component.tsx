@@ -43,13 +43,37 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
           <Form>
             <Stack spacing={2} sx={{ maxWidth: 500 }}>
               <TextFieldComponent name="name" label="Name" />
-              <TextFieldComponent name="status" label="Status" disabled={true} />
-              <TextFieldComponent name="species" label="Species" disabled={true} />
-              <TextFieldComponent name="gender" label="Gender" disabled={true} />
+              <TextFieldComponent
+                name="status"
+                label="Status"
+                disabled={true}
+              />
+              <TextFieldComponent
+                name="species"
+                label="Species"
+                disabled={true}
+              />
+              <TextFieldComponent
+                name="gender"
+                label="Gender"
+                disabled={true}
+              />
               <TextFieldComponent name="type" label="Type" disabled={true} />
-              <TextFieldComponent name="origin" label="Origin" disabled={true} />
-              <TextFieldComponent name="location" label="Location" disabled={true} />
-              <TextFieldComponent name="bestSentence" label="Best Sentence" />
+              <TextFieldComponent
+                name="origin"
+                label="Origin"
+                disabled={true}
+              />
+              <TextFieldComponent
+                name="location"
+                label="Location"
+                disabled={true}
+              />
+              <TextFieldComponent
+                name="bestSentence"
+                label="Best Sentence"
+                disabled={true}
+              />
               <Button type="submit" variant="contained" color="primary">
                 Save
               </Button>
