@@ -49,6 +49,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
               <TextFieldComponent name="type" label="Type" disabled={true} />
               <TextFieldComponent name="origin" label="Origin" disabled={true} />
               <TextFieldComponent name="location" label="Location" disabled={true} />
+              <TextFieldComponent name="bestSentence" label="Best Sentence" />
               <Button type="submit" variant="contained" color="primary">
                 Save
               </Button>

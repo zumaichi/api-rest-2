@@ -39,6 +39,12 @@ app.put('/api/character/:id', async (context) => {
   return context.body(null, 204);
 });
 
+  app.delete('/api/character/:id', (context) => {
+    const id = Number(context.req.param('id'));
+    db.characters = db.characters.filter((c) => c.id !== id);
+    return context.body(null, 204);
+  });
+
 serve({ fetch: app.fetch, port: 3000 }, (info) => {
   console.log(`API running on ${info.port}`);
 });

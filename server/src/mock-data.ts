@@ -1,5 +1,4 @@
-import { Character } from "./model.js";
-
+import { Character } from './model.js';
 
 export const characters: Character[] = [
   {
@@ -17,6 +16,7 @@ export const characters: Character[] = [
       name: 'Citadel of Ricks',
       url: 'https://rickandmortyapi.com/api/location/3',
     },
+    bestSentence: '',
     image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     episode: [
       'https://rickandmortyapi.com/api/episode/1',
@@ -90,6 +90,7 @@ export const characters: Character[] = [
       url: 'https://rickandmortyapi.com/api/location/3',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+    bestSentence: '',
     episode: [
       'https://rickandmortyapi.com/api/episode/1',
       'https://rickandmortyapi.com/api/episode/2',
@@ -161,6 +162,7 @@ export const characters: Character[] = [
       name: 'Earth (Replacement Dimension)',
       url: 'https://rickandmortyapi.com/api/location/20',
     },
+    bestSentence: '',
     image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
     episode: [
       'https://rickandmortyapi.com/api/episode/6',
@@ -225,6 +227,7 @@ export const characters: Character[] = [
       url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
+    bestSentence: '',
     episode: [
       'https://rickandmortyapi.com/api/episode/6',
       'https://rickandmortyapi.com/api/episode/7',
@@ -287,6 +290,7 @@ export const characters: Character[] = [
       name: 'Earth (Replacement Dimension)',
       url: 'https://rickandmortyapi.com/api/location/20',
     },
+    bestSentence: '',
     image: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
     episode: [
       'https://rickandmortyapi.com/api/episode/6',

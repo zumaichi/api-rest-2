@@ -13,6 +13,7 @@ export const mapCharacterFromApiToVm = (
   location: character.location.name,
   image: character.image,
   type: character.type || 'N/A',
+  bestSentence: character.bestSentence ?? '',
 });
 
 export const mapCharacterFromVmToApi = (
@@ -34,6 +35,7 @@ export const mapCharacterFromVmToApi = (
     },
     image: character.image,
     type: character.type,
+    bestSentence: character.bestSentence,
     episode: [],
     url: '',
     created: new Date().toISOString(),

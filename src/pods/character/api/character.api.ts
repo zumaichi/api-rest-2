@@ -1,9 +1,12 @@
 import { Character } from './character.api-model';
 import { Lookup } from '#common/models';
-import axios from 'axios';
+
+const url = '/api/character';
+
 
 export const getCharacterById = async (id: string): Promise<Character> => {
-  const { data } = await axios.get<Character>(`/api/character/${id}`);
+  const response = await fetch(`${url}/${id}`);
+  const data = await response.json();
   return data;
 };
 
@@ -12,5 +15,12 @@ export const getCities = async (): Promise<Lookup[]> => {
 };
 
 export const saveCharacter = async (character: Character): Promise<boolean> => {
+  await fetch(`${url}/${character.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(character),
+  });
   return true;
 };
